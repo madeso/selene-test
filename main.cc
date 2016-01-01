@@ -15,6 +15,9 @@ void print_exception() {
   catch (std::runtime_error& err) {
     std::cout << err.what() << std::endl;
   }
+  catch (const char* const err) {
+    std::cout << err << std::endl;
+  }
   catch (...) {
     std::cout << "Unknown error" << std::endl;
   }
