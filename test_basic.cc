@@ -5,7 +5,7 @@
 void SilenceScriptErrors(int sd, std::string message, std::exception_ptr ex) {
 }
 
-TEST(basic_test) {
+TEST(test_basic) {
   sel::State state(true);
   state.HandleExceptionsWith(SilenceScriptErrors);
 

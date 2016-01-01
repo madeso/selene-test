@@ -41,8 +41,8 @@ void run_test(std::function<TestPtr ()> f) {
 
 }
 
-TestPtr basic_test();
+TestPtr test_basic();
 
 void main() {
-  run_test(basic_test);
+  run_test(test_basic);
 }
