@@ -64,7 +64,10 @@ TEST(test_custom_print) {
   state("print = printlib.custom_print");
 
   state("print(\"dog\", 1)");
-  if (last_print != "dog 1") throw "failed to print dog";
+  if (last_print != "dog 1") throw "failed to print dog 1";
 
   // todo: try to bind CustomPrintFunctorGlue
+  // state["myprint"] = CustomPrintFunctorGlue(); // only accepts proper functors
+  // state("myprint(\"cat\", 2)");
+  // if (last_print != "cat 2") throw "failed to print cat 2";
 }
