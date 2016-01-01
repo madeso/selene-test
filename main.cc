@@ -49,6 +49,7 @@ TestPtr test_function();
 TestPtr test_string_passing();
 TestPtr test_obj();
 TestPtr test_obj_readme();
+TestPtr test_custom_print();
 
 void main() {
   run_test(test_basic);
@@ -56,6 +57,7 @@ void main() {
   run_test(test_string_passing);
   run_test(test_obj);
   run_test(test_obj_readme);
+  run_test(test_custom_print);
 
   std::cout << fails << " fails of " << tests << " tests.";
 }
