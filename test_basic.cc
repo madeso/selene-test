@@ -2,7 +2,9 @@
 
 #include "selene.h"
 
+namespace {
 void SilenceScriptErrors(int sd, std::string message, std::exception_ptr ex) {
+}
 }
 
 TEST(test_basic) {
