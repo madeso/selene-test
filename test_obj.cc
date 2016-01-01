@@ -12,8 +12,7 @@ void StopScriptErrors(int sd, std::string message, std::exception_ptr ex) {
 }
 
 namespace {
-  class Obj {
-  public:
+  struct Obj {
     std::string mydog;
 
     std::string dog() {
@@ -37,9 +36,11 @@ TEST(test_obj) {
 
   state["obj"].SetObj(obj, "dog", &Obj::dog, "faildog", &Obj::faildog);
 
-  state("res = obj:dog()");
+  state("res = obj.dog()");
+  // state("res = obj:dog()");
   std::string res = state["res"];
   if (res != "dog") throw "failed to dog";
 
-  state("obj:faildog(\"dog\")");
+  // state("obj:faildog(\"dog\")"); // exception: dog is not dog (\x5\x1)
+  state("obj.faildog(\"dog\")"); // [string "obj.faildog("dog")"]:1: bad argument #1 to 'faildog' (unregistered type expected, got string)
 }
