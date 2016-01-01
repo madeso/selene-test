@@ -46,8 +46,10 @@ void run_test(std::function<TestPtr ()> f) {
 
 TestPtr test_basic();
 TestPtr test_function();
+TestPtr test_string_passing();
 
 void main() {
   run_test(test_basic);
   run_test(test_function);
+  run_test(test_string_passing);
 }
