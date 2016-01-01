@@ -47,9 +47,13 @@ void run_test(std::function<TestPtr ()> f) {
 TestPtr test_basic();
 TestPtr test_function();
 TestPtr test_string_passing();
+TestPtr test_obj();
 
 void main() {
   run_test(test_basic);
   run_test(test_function);
   run_test(test_string_passing);
+  run_test(test_obj);
+
+  std::cout << fails << " fails of " << tests << " tests.";
 }
