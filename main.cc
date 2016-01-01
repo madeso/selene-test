@@ -12,8 +12,11 @@ void print_exception() {
   try {
     throw;
   }
-  catch (std::runtime_error& err) {
+  catch (std::exception& err) {
     std::cout << err.what() << std::endl;
+  }
+  catch (const std::string& err) {
+    std::cout << err << std::endl;
   }
   catch (const char* const err) {
     std::cout << err << std::endl;
@@ -42,7 +45,9 @@ void run_test(std::function<TestPtr ()> f) {
 }
 
 TestPtr test_basic();
+TestPtr test_function();
 
 void main() {
   run_test(test_basic);
+  run_test(test_function);
 }
